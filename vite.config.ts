@@ -37,7 +37,8 @@ export default defineConfig({
           // Chart libraries - separated to avoid conflicts
           apexcharts: ['apexcharts', 'react-apexcharts'],
           chartjs: ['chart.js', 'react-chartjs-2'],
-          gauges: ['react-d3-speedometer', 'react-gauge-component'],
+          speedometer: ['react-d3-speedometer'],
+          gauge: ['react-gauge-component'],
           
           // Calendar and date libraries
           calendar: ['@fullcalendar/core', '@fullcalendar/daygrid', '@fullcalendar/interaction', '@fullcalendar/list', '@fullcalendar/react', '@fullcalendar/timegrid', 'react-big-calendar', 'flatpickr', 'react-flatpickr', 'moment', 'date-fns'],
@@ -46,7 +47,7 @@ export default defineConfig({
           maps: ['mapbox-gl', '@mapbox/mapbox-gl-draw', '@react-jvectormap/core', '@react-jvectormap/world'],
           
           // Utility libraries
-          utils: ['lodash', 'axios', 'clsx', 'classnames', 'class-variance-authority', 'tailwind-merge'],
+          utils: ['axios', 'clsx', 'classnames', 'class-variance-authority', 'tailwind-merge'],
           
           // Redux and state management
           redux: ['@reduxjs/toolkit', 'react-redux', 'redux-persist'],
