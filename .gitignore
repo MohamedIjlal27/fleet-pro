@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+.env
+.env.production
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.prettierrc.json
+.nvmrc
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
+
+# Exclude specific files created for documentation
+docs/garage-module-connector.md
+docs/README.md
+docs/api-connections/
+scripts/repo-connector.js

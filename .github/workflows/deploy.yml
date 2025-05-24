@@ -1,0 +1,66 @@
+name: Deploy Frontend
+
+on:
+  push:
+    branches:
+      - prod
+      - dev
+
+jobs:
+  deploy-frontend-dev:
+    if: startsWith(github.ref, 'refs/heads/dev')
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Deploy to Dev EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_FRONTEND_EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.DEV_EC2_SSH_KEY }}
+          script: |
+            echo "Successfully connected to Dev EC2 instance. Running deploy.sh script..."
+            cd /var/www/frontend-dev  # Change to the dev code directory
+            sudo git reset --hard HEAD  # Force discard any local changes
+            sudo git fetch origin dev  # Fetch the latest changes from the dev branch
+            sudo git reset --hard origin/dev  # Hard reset to the latest commit on dev branch
+            sudo chmod +x /var/www/frontend-dev/scripts/deploy.sh  # Ensure the script is executable
+            sudo /var/www/frontend-dev/scripts/deploy.sh dev # Run the deploy script
+  deploy-frontend-prod:
+    if: startsWith(github.ref, 'refs/heads/prod')
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Deploy to Prod EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.FRONTEND_EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            echo "Successfully connected to Prod EC2 instance. Running deploy.sh script..."
+            cd /var/www/frontend-prod  # Change to the prod code directory
+            sudo git reset --hard HEAD  # Force discard any local changes
+            sudo git checkout prod  # Fetch the checkout to the prod branch
+            sudo git fetch origin prod  # Fetch the latest changes from the prod branch
+            sudo git reset --hard origin/prod  # Hard reset to the latest commit on prod branch
+            sudo chmod +x /var/www/frontend-prod/scripts/deploy.sh  # Ensure the script is executable
+            sudo /var/www/frontend-prod/scripts/deploy.sh prod # Run the deploy script

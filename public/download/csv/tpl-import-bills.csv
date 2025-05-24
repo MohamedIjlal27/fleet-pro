@@ -1,0 +1,3 @@
+Invoice Number,Expect Payment Time,Currency,Customer Name,Customer Email,Customer Phone Number,Amount,Subtotal,Discount,Tax,Describe,Type,Status
+TESG333-4541,2024-04-12 17:58:05,cad,Davin Mills,testttsse@gmail.com,12835629443,3000.00,3000.00,100.00,13.25,,1,1
+TESG333-4543,2024-04-10 17:58:05,cad,Davin Mills,ucrooks@hotmail.com,12835629443,1000.00,1000.00,300.00,45.50,,3,1
