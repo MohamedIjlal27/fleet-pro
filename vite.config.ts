@@ -34,8 +34,10 @@ export default defineConfig({
           mui: ['@mui/material', '@mui/icons-material', '@mui/lab', '@mui/utils', '@mui/x-charts', '@mui/x-date-pickers'],
           radix: ['@radix-ui/react-checkbox', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-label', '@radix-ui/react-radio-group', '@radix-ui/react-select', '@radix-ui/react-separator', '@radix-ui/react-slot', '@radix-ui/react-tabs'],
           
-          // Chart libraries
-          charts: ['apexcharts', 'react-apexcharts', 'chart.js', 'react-chartjs-2', 'react-d3-speedometer', 'react-gauge-component'],
+          // Chart libraries - separated to avoid conflicts
+          apexcharts: ['apexcharts', 'react-apexcharts'],
+          chartjs: ['chart.js', 'react-chartjs-2'],
+          gauges: ['react-d3-speedometer', 'react-gauge-component'],
           
           // Calendar and date libraries
           calendar: ['@fullcalendar/core', '@fullcalendar/daygrid', '@fullcalendar/interaction', '@fullcalendar/list', '@fullcalendar/react', '@fullcalendar/timegrid', 'react-big-calendar', 'flatpickr', 'react-flatpickr', 'moment', 'date-fns'],

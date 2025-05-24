@@ -7,6 +7,8 @@ import "swiper/swiper-bundle.css";
 import "simplebar-react/dist/simplebar.min.css";
 import "flatpickr/dist/flatpickr.css";
 import 'react-toastify/dist/ReactToastify.min.css';
+// Import Chart.js configuration early to ensure proper registration
+import './utils/chartConfig';
 import App from './App.tsx';
 import { AppWrapper } from "./components/common/PageMeta.tsx";
 import { ThemeProvider } from "./context/ThemeContext.tsx";
