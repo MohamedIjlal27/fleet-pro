@@ -9,7 +9,7 @@ import OtherOptionImg from "./img/other_default_new.png";
 import TrailerOptionImg from "./img/trailer_default.png";
 import TruckOptionImg from "./img/truck_default.png";
 import { useNavigate } from "react-router";
-import SynopsLogo from "@/assets/Synops-Logo-Light.png"; // Adjust path based on structure
+import SynopsLogo from "@/assets/logo.svg"; // Adjust path based on structure
 
 import {
   DashcamSvg,

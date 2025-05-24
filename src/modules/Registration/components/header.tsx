@@ -1,4 +1,4 @@
-import SynopsLogo from "@/assets/Synops-Logo-Light.png"; // Adjust path based on structure
+import SynopsLogo from "@/assets/logo.svg"; // Adjust path based on structure
 
 const Header = () => {
   return (
